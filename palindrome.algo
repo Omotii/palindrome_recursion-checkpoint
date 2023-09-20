@@ -1,0 +1,25 @@
+ALGORITHM palindrome-algorithm
+
+FUNCTION function_name(word: STRING) : 
+VAR
+    n = word.length;
+    newWord = 0;
+    palindromic: STRING;
+BEGIN
+    WHILE (word[0] === word[n-1]) DO    //condition to test if the first word and last word are same character
+        newWord = n-1 - 1;             //to read the words backwards and store value in newWord
+        IF (newWord <> word) THEN       //check for inequality and return false
+            write("word not a palindrome")
+        
+        ELSE IF (newWord === word) THEN  //check for equality
+            write("word is a palindrome")
+        END_IF
+    END_WHILE
+    RETURN newWord;
+
+    IF (word = 0 OR n = 1) THEN             //stop condition checking if the word is empty or has one character
+        write("not a palindrome")        
+    END_IF
+    RETURN word;
+
+END
